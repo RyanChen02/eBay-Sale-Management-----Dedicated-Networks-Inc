@@ -14,7 +14,7 @@ cnx = pyodbc.connect(
     SERVER='####',',
     DATABASE='####',
     UID='pautomate',
-    PWD='35XtkmV3irAnKn6yjzh0',
+    PWD='####',
     trusted_connection='no')
 
 
@@ -100,7 +100,7 @@ def mail():
 
 
 #Setting auto email sending system
-schedule.every().monday.at("13:31").do(mail)
+schedule.every().monday.at("08:30").do(mail)
 schedule.every().tuesday.at("08:30").do(mail)
 schedule.every().wednesday.at("08:30").do(mail)
 schedule.every().thursday.at("08:30").do(mail)
