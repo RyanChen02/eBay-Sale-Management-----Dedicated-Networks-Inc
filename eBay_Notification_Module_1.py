@@ -32,7 +32,7 @@ cursor= conn.cursor()
 
 
 ##table 1 & 2 --- pull out variables from st and inventory tables as First and Second Table
-df_table1= pd.read_sql_query ('''SELECT item.itemnumber AS 'item number'
+df_table1= pd.read_sql_query ("""SELECT item.itemnumber AS 'item number'
 	,stdetail.serialnumber AS 'serial number'
 	,stdetail.conditioncode AS 'condition code'
 	,stdetail.warehouse AS 'warehouse'
@@ -46,7 +46,7 @@ INNER JOIN st  ON st.stid = stdetail.stid
 WHERE (
 		stdetail.warehouse = 'EBAY'
 		AND shipdate = cast(getdate() AS DATE)
-		)''', cnx)
+		)""", cnx)
 
 
 df_table2 =  pd.read_sql_query ("""SELECT itemnumber AS 'item number'
@@ -71,9 +71,9 @@ merge.fillna(0,inplace=True)
 
 ##storing eBay merge differences variables into a new table to "DEV-Ryan" database
 for i,e in merge.iterrows():
-    if e['stid_ebay'] == 0:
+    if e["stid_ebay"] == 0:
         query= "INSERT INTO ebay values(?,?,?,?,?,?,?,?)"
-        cursor.execute(query,e['Item Number'], e["Serial Number"],e["Condition Code"],e["Warehouse"],e["CV Code"],e["Ship Date"], e["STID"],e["Inventory ID"])
+        cursor.execute(query,e["Item Number"], e["Serial Number"],e["Condition Code"],e["Warehouse"],e["CV Code"],e["Ship Date"], e["STID"],e["Inventory ID"])
     else:
         continue
 
