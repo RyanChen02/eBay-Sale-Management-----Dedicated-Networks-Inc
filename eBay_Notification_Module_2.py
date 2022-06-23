@@ -46,7 +46,7 @@ WHERE shipdate = cast(getdate() AS DATE)
 
 
 #import table3 from "DNI-SQL01" 
-df_table1= pd.read_sql_query ('''SELECT item.itemnumber AS 'item number'
+df_table1= pd.read_sql_query ("""SELECT item.itemnumber AS 'item number'
 	,stdetail.serialnumber AS 'serial number'
 	,stdetail.conditioncode AS 'condition code'
 	,stdetail.warehouse AS 'warehouse'
@@ -60,7 +60,7 @@ INNER JOIN st  ON st.stid = stdetail.stid
 WHERE (
 		stdetail.warehouse = 'EBAY'
 		AND shipdate = cast(getdate() AS DATE)
-		)''', cnx)
+		)""", cnx)
 
 
 #creating new table as table4 to compare variables in table2 and table3
