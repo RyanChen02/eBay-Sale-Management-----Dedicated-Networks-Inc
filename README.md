@@ -1,8 +1,7 @@
-**eBay-platform-email-notification-on-sales-reports-----Python**
+**eBay Sale Management --- Dedicated Networks, Inc**
 
-eBay automation on what is sold for Ecom Team and send out email notification. Through the email notification system to simplify and streamline the process for updating on different sites.
+Designed and implemented a real-time email notification on daily sales reports from the eBay platform for the Ecommerce and Marketing team inside the organization (Python & SQL).
 
-•	Designed and created a real-time email notification on sales reports for the eBay platform using python. 
+•	Generated a daily inventory report through a database to connect with Sale Management System to notify employees. 
 
-•	Implemented a Crawler to manipulate inventory data for each different product organized by SQL.  
-
+•	Optimized the company’s inventory levels and decreased the number of slow-moving products. 
